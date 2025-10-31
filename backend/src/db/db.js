@@ -6,7 +6,6 @@ const dbPath = path.join(__dirname, '..', '..', 'task_tracker.db');
 const db = new Database(dbPath);
 
 
-// Initialize schema
 const init = () => {
     db.prepare(`
 CREATE TABLE IF NOT EXISTS tasks (

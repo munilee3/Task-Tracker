@@ -3,7 +3,6 @@ const router = express.Router();
 const { createTask, getTasks, updateTask, getTaskById } = require('../services/task.service');
 
 
-// POST /tasks
 router.post('/', (req, res) => {
     const { title, description, priority, due_date, status } = req.body;
     if (!title || !due_date || !priority) {
@@ -21,7 +20,6 @@ router.post('/', (req, res) => {
 });
 
 
-// GET /tasks
 router.get('/', (req, res) => {
     const { status, priority, sortByDue } = req.query;
     try {
@@ -34,7 +32,6 @@ router.get('/', (req, res) => {
 });
 
 
-// PATCH /tasks/:id
 router.patch('/:id', (req, res) => {
     const id = Number(req.params.id);
     const { status, priority } = req.body;
